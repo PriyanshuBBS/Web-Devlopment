@@ -1,0 +1,232 @@
+Hollow Pattern - Print * at 1st r & c and last r & c
+
+Q 2.
+
+* * * * *
+* * * *
+* * *
+* *
+*
+
+Solution - 
+
+A space it put if it is greater than j
+
+* * * * _  [ j > 4]
+
+ for (int i = r; i >=1; i--)
+    {
+        for (int j = 1; j <= r; j++)
+        {
+            if(j<=i){
+                cout<<"*";
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+        
+    }
+
+
+Q.3 -	
+
+* 
+* *
+* * *
+
+Logic : no. of stars is no. of rows -> Hence j = * when it till it is equal to row.
+
+for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+           if(j<=i){
+               cout<<"*";
+           }
+           else{
+               cout<<" ";
+           }
+        }
+        cout<<endl;
+        
+    }
+
+
+Q.4 -
+
+Butterfly upper part
+
+*           *        Spaces are - (2*n - 2*i)
+* *      * *
+* * * * * *
+
+3 loops 
+
+1st -to print star on left side
+
+2nd - to print gaps
+
+3rd - to print star on right side ( it is same as of left side) 
+		
+	or 
+
+     - set j at the position where space ends
+         	* _ _ _ _  <- at 5th then run till 2*n that is end of no of columns
+
+Code - for (int i = 1; i <= n; i++)
+    {
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                cout << "*";
+            }
+
+            int space = 2 * n - 2 * i; // N = total no of rows and i is current row number
+            for (int j = 1; j <= space; j++)
+            {
+                cout << " ";
+            }
+
+            for (int j = (space+i); j < (2 * n); j++)
+            {
+                cout << "*";
+            }
+        }
+        cout << endl;
+    }
+
+Part 2:
+
+1
+0 1
+1 0 1
+0 1 0 1
+1 0 1 0 1
+
+
+
+Solution - Here it is 1 at even positions
+
+Code -  for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j <r; j++)
+        {
+            if(j<=i){
+                if((i+j)%2==0)
+                {
+                    cout<<"1";
+                
+                }
+                else{
+                    cout<<"0";
+                }
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+        
+        
+    }
+
+
+Q 5. 
+
+_ _ _ * * * 
+
+_ _ * * *
+
+_ * * *
+
+* * *
+
+Soln - Similar to Butterfly. 2 Loops .1st, for initial gap and then for * .
+          No loop after * as only space needed
+
+Code 
+ 
+ for (int i = r; i > 0; i--)	// i is choosen backweard becuase j can be altered
+    {
+        for (int j = 0; j < i - 1; j++)
+        {
+            cout << " ";
+        }
+
+        for (int j = 0; j < 5; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+
+Q.6 Pyramid
+
+    1
+  1   2
+1   2   3
+
+
+Soln - 
+
+
+Q  7 
+
+_ _ _ 1
+_ _ 2 1 2
+_ 3 2 1 2 3
+
+Soln - 3 Loop. 1st - Spaces, 2nd - Before 1 , Print 1, After 1
+
+Code:
+for (int j = 0; j < n - i; j++)
+    {
+        cout<<" ";
+    }
+    for (int j = i; j > 1 ; j--)
+    {
+        cout<<j;
+    }
+
+    cout<<"1";
+    
+    for (int j = 2; j <=i ; j++)
+    {
+        cout<<j;
+    }
+
+
+Q 8. 
+
+_ _ * 
+_ * * *
+* * * * * *
+* * 8 8 8 8 8
+   8 8 8 8 8
+      8 8 8
+         8 
+	
+
+Soln - 2 Parts Up and Down
+
+3 loop
+
+1st for gap , 2nd for * before mid star, mid star print and then 3rd star in increase order 
+
+
+
+ 			------------>  Armstrong/Narcissistic Number        <----------------
+
+
+ 1. How to find number of digits in a number
+
+	When a number /10, it is reduced by 1 digit
+
+		370/10 = 37 -> count = 1
+		37/10 = 3 -> count = 2
+		3/10 = 0 -> count = 3  	// Here the loop stops to checks
+
+	How to find Number - 371 % 10 = 1,   37%10 = 7, 3%10 = 3;
