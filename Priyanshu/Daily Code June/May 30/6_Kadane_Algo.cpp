@@ -21,7 +21,7 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-       sum += a[i];
+        sum += a[i];
 
         if (sum > maxsum)
         {

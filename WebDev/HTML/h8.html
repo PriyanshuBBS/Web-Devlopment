@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h2>This is HTML forms</h2>
+    <!-- action is a place where the data of form will be stored -->
+    <form action="backend.php"></form>
+    <!-- br is not recommended (use css)-->
+    <!-- When using label, when click on Name box will be selected and easied to used -->
+    <!-- label, id must be -->
+    <label for="name"> Name</label>
+    <div>
+        <input type="text" name="myName" id="name">
+    </div>
+    <br>
+    <div>
+        <!-- type: checkbox -->
+         Eligible?: <input type="checkbox" name="myEligibility" checked>
+    </div>
+    <br>
+    <div>
+        Roll : <input type="text" name="myRoll">
+    </div>
+    <br>
+    <div>
+        <!-- input:em... to get the below command -->
+        <!-- With the help of name it is identified by backend -->
+        Email : <input type="email" name="myMail">
+    </div>
+    <br>
+    <div>
+        <!-- input:date -->
+        <input type="date" name=" ">
+    </div>
+    <br>
+    <!-- by default select : type selected -->
+    <div>
+        <label for="car">Car</label>
+        <select name="myCar" id="car">
+            <option value="MS Baleno"> Baleno</option>
+            <option value="MS Brezza" selected> Brezza</option>
+
+        </select>
+    </div>
+    <br>
+    <div>
+        <!-- input:number -->
+        <input type="number" name="" id=" ">
+        <!-- Number can accept 10e2 for exponential -->
+    </div>
+    <br>
+    <div>
+        <!-- input:radio -->
+        Gender: Male <input type="radio" name="myGender"> Female <input type="radio" name="myGender">
+        Other <input type="radio" name="myGender">
+    </div>
+    <br>
+    <div>
+        <!-- textarea -->
+        Write about yourself: <br><textarea name="myText" cols="90" rows="10"></textarea>
+        <!-- Box area can be changed by GUI(strecting) in Result page -->
+    </div>
+    <br>
+    <div>
+        <!-- input:submit -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+</body>
+
+</html>

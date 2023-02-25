@@ -8,12 +8,19 @@ int main()
     {
         int temp = a[i];
         int j = i - 1;
-        while (a[j] > temp && j >= 0)
+        for (; j > 0; j--)
         {
-            a[j + 1] = a[j];
-            j--;
-        }
 
+            if (a[j] > temp)
+            {
+                // Shifting to the right
+                a[j + 1] = a[j];
+            }
+            else
+            {
+                break;
+            }
+        }
         a[j + 1] = temp;
     }
 
@@ -25,5 +32,3 @@ int main()
     cout << endl;
     return 0;
 }
-
-
